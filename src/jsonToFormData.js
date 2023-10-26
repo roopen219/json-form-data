@@ -114,11 +114,11 @@
 
                     convertRecursively(value, options, formData, propName);
 
-                } else if (value instanceof FileList) {
+                // } else if (value instanceof FileList) {
 
-                    for (var j = 0; j < value.length; j++) {
-                        formData.append(propName + '[' + j + ']', value.item(j));
-                    }
+                //     for (var j = 0; j < value.length; j++) {
+                //         formData.append(propName + '[' + j + ']', value.item(j));
+                //     }
                 } else if (value instanceof Blob) {
 
                     formData.append(propName, value, value.name);
