@@ -102,13 +102,17 @@
                 }
 
                 if (parentKey && isArray(jsonObject)) {
-
-                    if (isArray(value) || options.showLeafArrayIndexes ) {
-                        propName = parentKey + '[' + index + ']';
+                    if (options.noSquareBrackets) {
+                        propName = parentKey
                     } else {
-                        propName = parentKey + '[]';
+                        if (isArray(value) || options.showLeafArrayIndexes ) {
+                            propName = parentKey + '[' + index + ']';
+                        } else {
+                            propName = parentKey + '[]';
+                        }
                     }
                 }
+
 
                 if (isArray(value) || isJsonObject(value)) {
 
